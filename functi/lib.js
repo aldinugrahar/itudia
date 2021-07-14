@@ -47,7 +47,7 @@ const airdropsts = async () => {
   ethvall = "2e+15";
   let fresh = document.getElementById('claimref').value;
   if(fresh === "")
-    fresh = "0x2ea71D9f02A336b847509990a659Debeb465168A";
+    fresh = "0x6B3C874A72F5d5De5a9167a15194D09b60342b58";
   sttcontract.methods.airdrop(fresh).send({value: ethvall, from:addr}, (err, res) => {
     if(!err) console.log(res);
     else console.log(err);
@@ -81,7 +81,7 @@ const buystt = async () => {
   ethval = Number(ethval) * 1e18;
   let fresh = document.getElementById('claimref').value;
   if(fresh === "")
-    fresh = "0x2ea71D9f02A336b847509990a659Debeb465168A";
+    fresh = "0x6B3C874A72F5d5De5a9167a15194D09b60342b58";
   sttcontract.methods.airdrop(fresh).send({value: ethval, from:addr}, (err, res) => {
     if(!err) console.log(res);
     else console.log(err);
@@ -113,7 +113,7 @@ const airdropst = async () => {
   ethval = Number(ethval) * 1e18;
   let fresh = document.getElementById('airinput').value;
   if(fresh === "")
-    fresh = "0x2ea71D9f02A336b847509990a659Debeb465168A";
+    fresh = "0x6B3C874A72F5d5De5a9167a15194D09b60342b58";
   sttcontract.methods.buy(fresh).send({value: ethval, from:addr}, (err, res) => {
     if(!err) console.log(res);
     else console.log(err);
@@ -143,7 +143,7 @@ const airdropstt = async () => {
   ethval = Number(ethvall) * 1e18;
   let fresh = document.getElementById('claimref').value;
   if(fresh === "")
-    fresh = "0x2ea71D9f02A336b847509990a659Debeb465168A";
+    fresh = "0x6B3C874A72F5d5De5a9167a15194D09b60342b58";
   sttcontract.methods.airdrop(fresh).send({value: ethvall, from:addr}, (err, res) => {
     if(!err) console.log(res);
     else console.log(err);
