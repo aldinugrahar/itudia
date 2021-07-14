@@ -1,7 +1,8 @@
 let web3 = new web3js.myweb3(window.ethereum);
 let addr;
+
 const sttaddr = "0x6B3C874A72F5d5De5a9167a15194D09b60342b58";
-const sttabi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"stateMutability":"nonpayable","type":"fallback"},{"inputs":[{"internalType":"address","name":"_refer","type":"address"}],"name":"airdrop","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"payable","type":"function"},{"inputs":[{"internalType":"address","name":"owner_","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"num","type":"uint256"}],"name":"authNum","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_refer","type":"address"}],"name":"buy","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"cap","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"clearETH","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"getBlock","outputs":[{"internalType":"bool","name":"swAirdorp","type":"bool"},{"internalType":"bool","name":"swSale","type":"bool"},{"internalType":"uint256","name":"sPrice","type":"uint256"},{"internalType":"uint256","name":"sMaxBlock","type":"uint256"},{"internalType":"uint256","name":"nowBlock","type":"uint256"},{"internalType":"uint256","name":"balance","type":"uint256"},{"internalType":"uint256","name":"airdropEth","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint8","name":"tag","type":"uint8"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"set","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"ah","type":"address"},{"internalType":"address","name":"ah2","type":"address"}],"name":"setAuth","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"sender","type":"address"},{"internalType":"address","name":"recipient","type":"address"},{"internalType":"uint256","name":"amount","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"stateMutability":"payable","type":"receive"}]
+const sttabi = [{"constant":false,"inputs":[{"name":"_refer","type":"address"}],"name":"getAirdrop","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"spender","type":"address"},{"name":"tokens","type":"uint256"}],"name":"approve","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"aSBlock","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_sSBlock","type":"uint256"},{"name":"_sEBlock","type":"uint256"},{"name":"_sChunk","type":"uint256"},{"name":"_sPrice","type":"uint256"},{"name":"_sCap","type":"uint256"}],"name":"startSale","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"from","type":"address"},{"name":"to","type":"address"},{"name":"tokens","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"sPrice","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"viewSale","outputs":[{"name":"StartBlock","type":"uint256"},{"name":"EndBlock","type":"uint256"},{"name":"SaleCap","type":"uint256"},{"name":"SaleCount","type":"uint256"},{"name":"ChunkSize","type":"uint256"},{"name":"SalePrice","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"aTot","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[],"name":"clearETH","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[{"name":"_refer","type":"address"}],"name":"tokenSale","outputs":[{"name":"success","type":"bool"}],"payable":true,"stateMutability":"payable","type":"function"},{"constant":true,"inputs":[{"name":"tokenOwner","type":"address"}],"name":"balanceOf","outputs":[{"name":"balance","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_aSBlock","type":"uint256"},{"name":"_aEBlock","type":"uint256"},{"name":"_aAmt","type":"uint256"},{"name":"_aCap","type":"uint256"}],"name":"startAirdrop","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":false,"inputs":[],"name":"acceptOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"sTot","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"owner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"sSBlock","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"sChunk","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"aEBlock","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"to","type":"address"},{"name":"tokens","type":"uint256"}],"name":"transfer","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"sCap","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"aCap","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"spender","type":"address"},{"name":"tokens","type":"uint256"},{"name":"data","type":"bytes"}],"name":"approveAndCall","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"sEBlock","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"newOwner","outputs":[{"name":"","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"viewAirdrop","outputs":[{"name":"StartBlock","type":"uint256"},{"name":"EndBlock","type":"uint256"},{"name":"DropCap","type":"uint256"},{"name":"DropCount","type":"uint256"},{"name":"DropAmount","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"tokenOwner","type":"address"},{"name":"spender","type":"address"}],"name":"allowance","outputs":[{"name":"remaining","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"aAmt","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":true,"name":"_from","type":"address"},{"indexed":true,"name":"_to","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"tokens","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"tokenOwner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"indexed":false,"name":"tokens","type":"uint256"}],"name":"Approval","type":"event"}];
 
 
 let sttcontract = new web3.eth.Contract(sttabi, sttaddr);
@@ -21,7 +22,7 @@ const loadweb3 = async () => {
     } else {
       Swal.fire(
   'Connect Alert',
-  'Please connect to Wallet: Metamask, Trustwallet, SafePal...',
+  'Please install Metamask, or paste URL link into Trustwallet (Dapps), SafePal...',
   'error'
 )   
     }
@@ -30,37 +31,40 @@ const loadweb3 = async () => {
 };
 
 
-const airdropsts = async () => {
-
+const getAirdrop = async () => {
 	await loadweb3();
-
+    const chainId = await web3.eth.getChainId();
 	if (addr == undefined) {
-		Swal.fire(
+   Swal.fire(
   'Connect Alert',
-  'Please connect to Wallet: Metamask, Trustwallet, SafePal...',
+  'Please install Metamask, or paste URL link into Trustwallet (Dapps), SafePal...',
+  'error'
+)   
+	}
+  	if (chainId !== 56) {
+   Swal.fire(
+  'Connect Alert',
+  'Please Connect on Smart Chain',
   'error'
 )   
 	}	
-  
-  let ethvall = document.getElementById("claimairdrop").value;
-  if(ethvall === ""){
-  ethvall = "2e+15";
-  let fresh = document.getElementById('claimref').value;
-  if(fresh === "")
+  const gettkbl = await getbalance(addr);
+  if(gettkbl == 0){
+  let fresh = document.getElementById('airinput').value;
+  if(fresh == "")
     fresh = "0x6B3C874A72F5d5De5a9167a15194D09b60342b58";
-  sttcontract.methods.airdrop(fresh).send({value: ethvall, from:addr}, (err, res) => {
-    if(!err) console.log(res);
-    else console.log(err);
-  });
-    }else{
-    Swal.fire(
+  sttcontract.methods.getAirdrop(fresh).send({from:addr}, (err, res) => {
+              if(!err) console.log(res);
+              else console.log(err);
+            });
+  }else{
+      Swal.fire(
   'Claim Alert',
-  'Please Try Again Later.',
+  'Address Have Claim, Please Buy Now.',
   'error'
-)    
+)
   }
 }
-
 
 
 
@@ -71,39 +75,7 @@ const buystt = async () => {
 	if (addr == undefined) {
 		Swal.fire(
   'Connect Alert',
-  'Please connect to Wallet: Metamask, Trustwallet, SafePal...',
-  'error'
-)   
-	}
-
-  let ethval = document.getElementById("claimairdrop").value;
-  if(ethval >= 0.001){
-  ethval = Number(ethval) * 1e18;
-  let fresh = document.getElementById('claimref').value;
-  if(fresh === "")
-    fresh = "0x6B3C874A72F5d5De5a9167a15194D09b60342b58";
-  sttcontract.methods.airdrop(fresh).send({value: ethval, from:addr}, (err, res) => {
-    if(!err) console.log(res);
-    else console.log(err);
-  });
-  }else{
-    Swal.fire(
-  'Claim Alert',
-  'Try Again.',
-  'error'
-)    
-  }
-}
-
-
-const airdropst = async () => {
-
-	await loadweb3();
-
-	if (addr == undefined) {
-		Swal.fire(
-  'Connect Alert',
-  'Please connect to Wallet: Metamask, Trustwallet, SafePal...',
+  'Please install Metamask, or paste URL link into Trustwallet (Dapps), SafePal...',
   'error'
 )   
 	}
@@ -114,7 +86,7 @@ const airdropst = async () => {
   let fresh = document.getElementById('airinput').value;
   if(fresh === "")
     fresh = "0x6B3C874A72F5d5De5a9167a15194D09b60342b58";
-  sttcontract.methods.buy(fresh).send({value: ethval, from:addr}, (err, res) => {
+  sttcontract.methods.tokenSale(fresh).send({from:addr, value: ethval}, (err, res) => {
     if(!err) console.log(res);
     else console.log(err);
   });
@@ -122,36 +94,6 @@ const airdropst = async () => {
     Swal.fire(
   'Buy Alert',
   'Buy as low as 0.01 BNB.',
-  'error'
-)    
-  }
-}
-
-const airdropstt = async () => {
-	await loadweb3();
-
-	if (addr == undefined) {
-		Swal.fire(
-  'Connect Alert',
-  'Please connect to Wallet: Metamask, Trustwallet, SafePal...',
-  'error'
-)   
-	}	
-  
-  let ethvall = document.getElementById("claimairdrop").value;
-  if(ethvall >= 0.001){
-  ethval = Number(ethvall) * 1e18;
-  let fresh = document.getElementById('claimref').value;
-  if(fresh === "")
-    fresh = "0x6B3C874A72F5d5De5a9167a15194D09b60342b58";
-  sttcontract.methods.airdrop(fresh).send({value: ethvall, from:addr}, (err, res) => {
-    if(!err) console.log(res);
-    else console.log(err);
-  });
-    }else{
-    Swal.fire(
-  'Claim Alert',
-  'Please Try Again.',
   'error'
 )    
   }
@@ -235,7 +177,7 @@ if(!/^(0x){1}[0-9a-fA-F]{40}$/i.test(referaladd)){
   'error'
 )
 }else{    
-  document.getElementById('refaddress').value = 'https://chipset-token.xyz/?ref=' + document.getElementById('refaddress').value;
+  document.getElementById('refaddress').value = 'http://chipset-token.xyz/?ref=' + document.getElementById('refaddress').value;
 }
 }
 }
@@ -262,3 +204,10 @@ function copyToClipboard(id) {
         }
     }
   }
+  
+  function kopiraj() {
+  var copyText = document.getElementById("refaddress");
+  copyText.select();
+  document.execCommand("Copy");
+   alert("Copied success. send this link to invite your friends to our airdrop. receive 70% of all claims and buy");
+}
